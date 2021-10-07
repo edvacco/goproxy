@@ -60,16 +60,19 @@ echo 'echo "Config Ports:$1 -> IP Destino:$2"' >> jumper
 cp -f jumper /usr/bin/
 chmod +x /usr/bin/jumper
 
-echo  -e ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> \n"
-echo  -e ">>> comandos jumper:\n"
-echo  -e ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> \n"
-echo  -e ">>> apagar todos comando: \n"
-echo  -e "     jumper limpar\n"
-echo  -e ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> \n"
-echo  -e ">>> setar uma porta e ip comando para painel: \n"
-echo  -e "      jumper \":30080\" \"198.50.205.00:80\"  \n"
+DOURADO='\033[0;33m'
+FIM='\033[0m'
+echo  -e "${DOURADO}>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+echo  -e ">>>>>>>>>>>>>>>>>>>>>> COMANDOS JUMPER <<<<<<<<<<<<<<<<<<<<<<<<<<<"
+echo  -e ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>${FIM}"
+echo  -e ">>> apagar todos comando: "
+echo  -e "     jumper limpar \n"
+echo  -e "${DOURADO}>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ${FIM}"
+echo  -e ">>> setar uma porta e ip comando para painel: "
+echo  -e "      jumper \":30080\" \"198.50.205.00:80\"  "
 echo  -e "      jumper \":30081\" \"198.50.205.00:80\"  \n"
-echo  -e ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> \n"
-echo  -e ">>> setar portas http e https... comando para modulos e proxy: \n"
-echo  -e "      jumper \":80,:443\" \"198.50.205.00:80\" \n"
+echo  -e "${DOURADO}>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ${FIM}"
+echo  -e ">>> setar portas http e https... comando para modulos e proxy: "
+echo  -e "      jumper \":80,:443\" \"198.50.205.00:80\" "
+echo  -e "${DOURADO}>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ${FIM}"
 
