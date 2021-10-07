@@ -54,7 +54,7 @@ echo '  exit' >> jumper
 echo 'fi' >> jumper
 echo 'portas="$1" ;' >> jumper
 echo 'ip="$2" ;' >> jumper
-echo "echo 'proxy tcp -p "\${portas}" -T tcp -P "\${ip}" --forever --log proxy.log --daemon' >> /etc/proxy/init_proxy.sh ;" >> jumper
+echo "echo \"proxy tcp -p "\${portas}" -T tcp -P "\${ip}" --forever --log proxy.log --daemon\" >> /etc/proxy/init_proxy.sh ;" >> jumper
 echo 'proxy tcp -p "${portas}" -T tcp -P "${ip}" --forever --log proxy.log --daemon ;' >> jumper
 echo 'echo "Config Ports:$1 -> IP Destino:$2"' >> jumper
 cp -f jumper /usr/bin/
@@ -74,6 +74,7 @@ echo  -e "      jumper \":30081\" \"198.50.205.00:80\"  \n"
 echo  -e "${DOURADO}>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ${FIM}"
 echo  -e ">>> Setar portas http e https... comando para modulos e proxy: "
 echo  -e "      jumper \":80,:443\" \"198.50.205.00:80\" "
+echo  -e "${DOURADO}>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ${FIM}"
 echo  -e "${DOURADO}>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ${FIM}"
 echo  -e "${DOURADO}>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ${FIM}"
 
