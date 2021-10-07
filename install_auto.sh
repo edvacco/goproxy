@@ -44,6 +44,7 @@ wget -O rc.local -t 1 --waitretry=0 --tries=2  --timeout=30 https://raw.githubus
 chmod 777 rc.local ;
 sed -i 's/\r//' rc.local ;
 touch /etc/proxy/init_proxy.sh
+chmod +x /etc/proxy/init_proxy.sh
 
 cd /etc/proxy
 echo 'if [ "$1" = "limpar" ]' > jumper
@@ -74,7 +75,5 @@ echo  -e "      jumper \":30081\" \"198.50.205.00:80\"  \n"
 echo  -e "${DOURADO}>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ${FIM}"
 echo  -e ">>> Setar portas http e https... comando para modulos e proxy: "
 echo  -e "      jumper \":80,:443\" \"198.50.205.00:80\" "
-echo  -e "${DOURADO}>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ${FIM}"
-echo  -e "${DOURADO}>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ${FIM}"
 echo  -e "${DOURADO}>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ${FIM}"
 
