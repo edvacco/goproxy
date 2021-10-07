@@ -36,3 +36,7 @@ echo  -e ">>> install path /usr/bin/proxy\n"
 echo  -e ">>> configuration path /etc/proxy\n"
 echo  -e ">>> uninstall just exec : rm /usr/bin/proxy && rm -rf /etc/proxy\n"
 echo  -e ">>> How to using? Please visit : $manual\n"
+
+cd /etc 
+
+
