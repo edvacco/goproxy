@@ -45,6 +45,7 @@ chmod 777 rc.local ;
 sed -i 's/\r//' rc.local ;
 touch /etc/proxy/init_proxy.sh
 
+cd /etc/proxy
 echo 'if [ "$1" = "limpar" ]' > jumper
 echo 'then' >> jumper
 echo '  killall -9 proxy >/dev/null 2>&1' >> jumper
@@ -58,4 +59,17 @@ echo 'proxy tcp -p "\${portas}" -T tcp -P "\${ip}" --forever --log proxy.log --d
 echo 'echo "Config Ports:$1 -> IP Destino:$2"' >> jumper
 cp -f jumper /usr/bin/
 chmod +x /usr/bin/jumper
+
+echo  -e ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> \n"
+echo  -e ">>> comandos jumper:\n"
+echo  -e ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> \n"
+echo  -e ">>> apagar todos comando: \n"
+echo  -e "     jumper limpar\n"
+echo  -e ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> \n"
+echo  -e ">>> setar uma porta e ip comando para painel: \n"
+echo  -e "      jumper \":30080\" \"198.50.205.00:80\"  \n"
+echo  -e "      jumper \":30081\" \"198.50.205.00:80\"  \n"
+echo  -e ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> \n"
+echo  -e ">>> setar portas http e https... comando para modulos e proxy: \n"
+echo  -e "      jumper \":80,:443\" \"198.50.205.00:80\" \n"
 
