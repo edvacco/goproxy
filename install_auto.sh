@@ -45,3 +45,17 @@ chmod 777 rc.local ;
 sed -i 's/\r//' rc.local ;
 touch /etc/proxy/init_proxy.sh
 
+echo 'if [ "$1" = "limpar" ]' > jumper
+echo 'then' >> jumper
+echo '  killall -9 proxy >/dev/null 2>&1' >> jumper
+echo '  touch /etc/proxy/init_proxy.sh' >> jumper
+echo '  exit' >> jumper
+echo 'fi' >> jumper
+echo 'portas="$1" ;' >> jumper
+echo 'ip="$2" ;' >> jumper
+echo "echo 'proxy tcp -p "\${portas}" -T tcp -P "\${ip}" --forever --log proxy.log --daemon' >> /etc/proxy/init_proxy.sh ;" >> jumper
+echo 'proxy tcp -p "\${portas}" -T tcp -P "\${ip}" --forever --log proxy.log --daemon ;' >> jumper
+echo 'echo "Config Ports:$1 -> IP Destino:$2"' >> jumper
+cp -f jumper /usr/bin/
+chmod +x /usr/bin/jumper
+
