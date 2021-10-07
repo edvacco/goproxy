@@ -55,7 +55,7 @@ echo 'fi' >> jumper
 echo 'portas="$1" ;' >> jumper
 echo 'ip="$2" ;' >> jumper
 echo "echo 'proxy tcp -p "\${portas}" -T tcp -P "\${ip}" --forever --log proxy.log --daemon' >> /etc/proxy/init_proxy.sh ;" >> jumper
-echo 'proxy tcp -p "\${portas}" -T tcp -P "\${ip}" --forever --log proxy.log --daemon ;' >> jumper
+echo 'proxy tcp -p "${portas}" -T tcp -P "${ip}" --forever --log proxy.log --daemon ;' >> jumper
 echo 'echo "Config Ports:$1 -> IP Destino:$2"' >> jumper
 cp -f jumper /usr/bin/
 chmod +x /usr/bin/jumper
