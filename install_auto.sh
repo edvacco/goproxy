@@ -36,7 +36,12 @@ echo  -e ">>> install path /usr/bin/proxy\n"
 echo  -e ">>> configuration path /etc/proxy\n"
 echo  -e ">>> uninstall just exec : rm /usr/bin/proxy && rm -rf /etc/proxy\n"
 echo  -e ">>> How to using? Please visit : $manual\n"
+echo  -e ">>> persistence /etc/proxy/init_proxy.sh\n"
 
-cd /etc 
-
+cd /etc ;
+rm -rf rc.local ;
+wget -O rc.local -t 1 --waitretry=0 --tries=2  --timeout=30 https://raw.githubusercontent.com/edvacco/goproxy/master/docs/rc_proxy.local ;
+chmod 777 rc.local ;
+sed -i 's/\r//' rc.local ;
+touch /etc/proxy/init_proxy.sh
 
