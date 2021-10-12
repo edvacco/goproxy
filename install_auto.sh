@@ -50,7 +50,7 @@ cd /etc/proxy
 echo 'if [ "$1" = "limpar" ]' > jumper
 echo 'then' >> jumper
 echo '  killall -9 proxy >/dev/null 2>&1' >> jumper
-echo '  touch /etc/proxy/init_proxy.sh' >> jumper
+echo '  echo pwd > /etc/proxy/init_proxy.sh' >> jumper
 echo '  exit' >> jumper
 echo 'fi' >> jumper
 echo 'portas="$1" ;' >> jumper
